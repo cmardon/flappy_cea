@@ -1,3 +1,3 @@
-### Flappy CEA
+# Flappy CEA
 
 ## Consignes
