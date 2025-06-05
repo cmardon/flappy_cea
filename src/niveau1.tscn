@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceueqxwi4yfuy"]
+
+[ext_resource type="PackedScene" uid="uid://dka51w1cp7wik" path="res://src/joueur.tscn" id="1_plb3v"]
+[ext_resource type="Script" uid="uid://bjwovekcnmb8p" path="res://src/generateur_tuyau.gd" id="2_8rv27"]
+
+[node name="Niveau1" type="Node2D"]
+
+[node name="Joueur" parent="." instance=ExtResource("1_plb3v")]
+position = Vector2(227, 230)
+scale = Vector2(2, 2)
+
+[node name="generateur_tuyau" type="Node2D" parent="."]
+position = Vector2(1223, 306)
+scale = Vector2(2, 2)
+script = ExtResource("2_8rv27")
+
+[node name="Timer" type="Timer" parent="generateur_tuyau"]
+autostart = true
+
+[connection signal="timeout" from="generateur_tuyau/Timer" to="generateur_tuyau" method="_on_timer_timeout"]
